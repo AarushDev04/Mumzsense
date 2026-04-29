@@ -1,0 +1,28 @@
+# Training image for MumzSense classifier + embedding pipeline
+
+FROM python:3.11-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    g++ \
+    git \
+    libffi-dev \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /build
+
+COPY backend/requirements.txt .
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+WORKDIR /app
+COPY . .
+
+ENV HF_HOME=/app/.cache/huggingface
+ENV TRANSFORMERS_CACHE=/app/.cache/huggingface
+RUN mkdir -p /app/backend/models /app/.cache/huggingface
+
+WORKDIR /app/backend
+
+CMD ["python", "training/run_full_pipeline.py", "--no-index"]

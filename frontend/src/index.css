@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: #fafaf8;
+    color: #3d3d3a;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Arabic font when rtl */
+  [dir="rtl"] {
+    font-family: 'Cairo', system-ui, sans-serif;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d4d1c9;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b5b1a7;
+  }
+}
+
+@layer components {
+  /* Chat bubble animations */
+  .message-appear {
+    animation: fadeUp 0.4s ease forwards;
+  }
+
+  /* Shimmer skeleton */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      #f3f2ef 25%,
+      #e8e6e1 50%,
+      #f3f2ef 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  /* Focus ring override for brand */
+  .focus-coral:focus-visible {
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Arabic RTL text alignment helper */
+  .rtl-text {
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* Source card expand animation */
+  .expand-enter {
+    animation: fadeUp 0.25s ease forwards;
+  }
+}
+
+/* Custom bounce timing for typing indicator dots */
+@keyframes bounceGentle {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-gentle {
+  animation: bounceGentle 1.4s ease-in-out infinite;
+}
+
+/* Disable tap highlight on mobile */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Safe area insets for mobile */
+@supports (padding: max(0px)) {
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}

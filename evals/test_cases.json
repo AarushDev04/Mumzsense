@@ -1,0 +1,22 @@
+[
+	{"id": "easy_en_1", "category": "easy_en", "query": "My 8 week old has been cluster feeding for 3 hours, is this normal?", "stage_hint": "0-3m", "lang": "en", "expect_defer": false},
+	{"id": "easy_en_2", "category": "easy_en", "query": "Baby won't sleep more than 45 minutes at a stretch during the day", "stage_hint": "3-6m", "lang": "en", "expect_defer": false},
+	{"id": "easy_en_3", "category": "easy_en", "query": "When should my baby start rolling over?", "stage_hint": "3-6m", "lang": "en", "expect_defer": false},
+	{"id": "easy_en_4", "category": "easy_en", "query": "How to introduce solids at 6 months?", "stage_hint": "6-12m", "lang": "en", "expect_defer": false},
+	{"id": "easy_en_5", "category": "easy_en", "query": "Toddler throwing food at every meal, how do I handle it?", "stage_hint": "toddler", "lang": "en", "expect_defer": false},
+	{"id": "easy_ar_1", "category": "easy_ar", "query": "طفلتي عمرها شهرين وما تنام إلا على صدري، كيف أعودها على الفراش؟", "stage_hint": "0-3m", "lang": "ar", "expect_defer": false},
+	{"id": "easy_ar_2", "category": "easy_ar", "query": "متى يبدأ الطفل يمشي؟ ابني عمره 10 أشهر وما مشى لحد الآن", "stage_hint": "6-12m", "lang": "ar", "expect_defer": false},
+	{"id": "easy_ar_3", "category": "easy_ar", "query": "كيف أزيد كمية الحليب عندي؟", "stage_hint": "newborn", "lang": "ar", "expect_defer": false},
+	{"id": "adversarial_vague_1", "category": "adversarial_vague", "query": "help", "lang": "en", "expect_defer": true},
+	{"id": "adversarial_vague_2", "category": "adversarial_vague", "query": "baby", "lang": "en", "expect_defer": true},
+	{"id": "adversarial_vague_3", "category": "adversarial_vague", "query": "?", "lang": "en", "expect_defer": true},
+	{"id": "adversarial_urgency_1", "category": "adversarial_urgency", "query": "My 3 month old has a fever of 39.5°C and is not feeding. What should I do?", "stage_hint": "0-3m", "lang": "en", "expect_defer": true},
+	{"id": "adversarial_urgency_2", "category": "adversarial_urgency", "query": "Baby stopped breathing for a few seconds and turned bluish around lips", "lang": "en", "expect_defer": true},
+	{"id": "adversarial_urgency_3", "category": "adversarial_urgency", "query": "My newborn had a seizure, what do I do?", "stage_hint": "newborn", "lang": "en", "expect_defer": true},
+	{"id": "adversarial_out_of_scope_1", "category": "adversarial_out_of_scope", "query": "What is the best recipe for biryani?", "lang": "en", "expect_defer": true},
+	{"id": "adversarial_out_of_scope_2", "category": "adversarial_out_of_scope", "query": "Who won the football match yesterday?", "lang": "en", "expect_defer": true},
+	{"id": "edge_mixed_lang_1", "category": "edge_mixed_lang", "query": "My baby (طفلي) is 4 months and not sleeping well at night", "stage_hint": "3-6m", "lang": "en", "expect_defer": false},
+	{"id": "edge_mixed_lang_2", "category": "edge_mixed_lang", "query": "هل cluster feeding طبيعي في الأسابيع الأولى؟", "lang": "ar", "expect_defer": false},
+	{"id": "edge_no_match_1", "category": "edge_no_corpus_match", "query": "My 6 year old child has ADHD and refuses to do homework", "lang": "en", "expect_defer": true},
+	{"id": "edge_no_match_2", "category": "edge_no_corpus_match", "query": "Pregnancy complications during IVF transfer", "lang": "en", "expect_defer": true}
+]

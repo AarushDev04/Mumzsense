@@ -1,0 +1,121 @@
+{
+  "total": 560,
+  "by_lang": {
+    "en": 440,
+    "ar": 120
+  },
+  "by_stage": {
+    "toddler": 86,
+    "6-12m": 102,
+    "3-6m": 102,
+    "newborn": 90,
+    "0-3m": 115,
+    "trimester": 65
+  },
+  "by_topic": {
+    "feeding": 135,
+    "mental_health": 64,
+    "gear": 36,
+    "health": 114,
+    "development": 79,
+    "sleep": 88,
+    "postpartum": 44
+  },
+  "by_urgency": {
+    "routine": 350,
+    "seek-help": 115,
+    "monitor": 95
+  },
+  "stage_lang": {
+    "toddler_en": 70,
+    "6-12m_en": 80,
+    "3-6m_ar": 22,
+    "3-6m_en": 80,
+    "newborn_ar": 20,
+    "newborn_en": 70,
+    "0-3m_en": 90,
+    "0-3m_ar": 25,
+    "trimester_en": 50,
+    "toddler_ar": 16,
+    "trimester_ar": 15,
+    "6-12m_ar": 22
+  },
+  "topic_urgency": {
+    "feeding_routine": 73,
+    "mental_health_seek-help": 16,
+    "mental_health_routine": 35,
+    "gear_routine": 35,
+    "health_routine": 58,
+    "development_routine": 55,
+    "health_seek-help": 33,
+    "feeding_monitor": 29,
+    "health_monitor": 23,
+    "feeding_seek-help": 33,
+    "sleep_routine": 62,
+    "sleep_seek-help": 13,
+    "postpartum_routine": 32,
+    "postpartum_seek-help": 7,
+    "mental_health_monitor": 13,
+    "sleep_monitor": 13,
+    "development_monitor": 11,
+    "development_seek-help": 13,
+    "postpartum_monitor": 5,
+    "gear_monitor": 1
+  },
+  "field_checks": {
+    "ok": 560,
+    "fail": 0,
+    "issues": []
+  },
+  "balance_check": {
+    "feeding": {
+      "count": 135,
+      "pct": 0.241,
+      "target_pct": 0.22,
+      "drift": 0.021,
+      "pass": true
+    },
+    "mental_health": {
+      "count": 64,
+      "pct": 0.114,
+      "target_pct": 0.05,
+      "drift": 0.064,
+      "pass": true
+    },
+    "gear": {
+      "count": 36,
+      "pct": 0.064,
+      "target_pct": 0.1,
+      "drift": 0.036,
+      "pass": true
+    },
+    "health": {
+      "count": 114,
+      "pct": 0.204,
+      "target_pct": 0.2,
+      "drift": 0.004,
+      "pass": true
+    },
+    "development": {
+      "count": 79,
+      "pct": 0.141,
+      "target_pct": 0.15,
+      "drift": 0.009,
+      "pass": true
+    },
+    "sleep": {
+      "count": 88,
+      "pct": 0.157,
+      "target_pct": 0.2,
+      "drift": 0.043,
+      "pass": true
+    },
+    "postpartum": {
+      "count": 44,
+      "pct": 0.079,
+      "target_pct": 0.08,
+      "drift": 0.001,
+      "pass": true
+    }
+  }
+}

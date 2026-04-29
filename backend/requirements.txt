@@ -1,0 +1,49 @@
+# MumzSense v1 — Backend Python Dependencies (Python 3.10 Compatible)
+
+# ── Web framework ──────────────────────────────────────────────────────────────
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+slowapi==0.1.9
+python-multipart==0.0.6
+
+# ── LangGraph / LangChain ──────────────────────────────────────────────────────
+langgraph==0.0.69
+langchain-core==0.2.43
+
+# ── LLM providers ───────────────────────────────────────────────────────────────
+openai==1.30.1
+groq==0.8.0
+
+# ── Embeddings ──────────────────────────────────────────────────────────────────
+sentence-transformers==2.2.2
+transformers==4.36.2
+torch==2.1.2
+
+# ── Classifier — TF-IDF + sklearn ──────────────────────────────────────────────
+scikit-learn==1.3.2
+scipy==1.11.4
+
+# ── Classifier — BiLSTM (Keras / TF) ────────────────────────────────────────────
+tensorflow==2.14.1
+keras==2.14.0
+
+# ── Database ────────────────────────────────────────────────────────────────────
+supabase==2.3.5
+postgrest==0.15.1
+gotrue==2.4.2
+psycopg[binary]==3.1.18
+
+# ── Caching ─────────────────────────────────────────────────────────────────────
+redis==5.0.1
+
+# ── Data / training utilities ───────────────────────────────────────────────────
+numpy==1.24.3
+pandas==2.0.3
+scikit-optimize==0.9.0
+langdetect==1.0.9
+
+# ── Dev / eval utilities ────────────────────────────────────────────────────────
+httpx==0.25.2
+python-dotenv==1.0.0

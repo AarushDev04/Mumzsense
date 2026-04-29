@@ -1,0 +1,82 @@
+{
+  "n_posts": 560,
+  "lang_dist": {
+    "en": 440,
+    "ar": 120
+  },
+  "topic_dist": {
+    "feeding": 135,
+    "mental_health": 64,
+    "gear": 36,
+    "health": 114,
+    "development": 79,
+    "sleep": 88,
+    "postpartum": 44
+  },
+  "urgency_dist": {
+    "routine": 350,
+    "seek-help": 115,
+    "monitor": 95
+  },
+  "stage_dist": {
+    "toddler": 86,
+    "6-12m": 102,
+    "3-6m": 102,
+    "newborn": 90,
+    "0-3m": 115,
+    "trimester": 65
+  },
+  "token_length": {
+    "mean": 53.86071428571429,
+    "std": 11.611042751428926,
+    "min": 24,
+    "max": 78,
+    "p50": 57.0,
+    "p95": 70.0
+  },
+  "vocab_size_raw": 4990,
+  "per_topic_length": {
+    "feeding": {
+      "mean": 53.13333333333333,
+      "std": 11.619778795625123,
+      "count": 135
+    },
+    "sleep": {
+      "mean": 54.63636363636363,
+      "std": 10.64102461977594,
+      "count": 88
+    },
+    "health": {
+      "mean": 52.37719298245614,
+      "std": 12.64105699477753,
+      "count": 114
+    },
+    "development": {
+      "mean": 52.69620253164557,
+      "std": 11.277124184960968,
+      "count": 79
+    },
+    "gear": {
+      "mean": 55.0,
+      "std": 10.949378470437894,
+      "count": 36
+    },
+    "postpartum": {
+      "mean": 54.15909090909091,
+      "std": 10.856383086415487,
+      "count": 44
+    },
+    "mental_health": {
+      "mean": 57.5625,
+      "std": 11.270640787018278,
+      "count": 64
+    }
+  },
+  "trust_score": {
+    "mean": 0.7396071428571429,
+    "std": 0.0809068420582384,
+    "min": 0.4,
+    "max": 0.98
+  },
+  "recommended_max_seq_len": 70
+}
