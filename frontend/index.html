@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MumzSense — Ask anything about your baby's journey</title>
+    <meta name="api-base" content="https://mumzsense-production.up.railway.app">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { height: 100%; }
@@ -262,7 +263,11 @@
     </main>
 
     <script>
-        const API_BASE = 'http://localhost:8001';
+        // API_BASE: reads from meta tag (injected by Netlify/build) or falls back to Railway URL
+        const _metaApi = document.querySelector('meta[name="api-base"]');
+        const API_BASE = (_metaApi && _metaApi.content && _metaApi.content !== '__API_BASE__')
+            ? _metaApi.content
+            : 'https://mumzsense-production.up.railway.app';
         let currentLang = 'en';
 
         async function askQuery() {

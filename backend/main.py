@@ -131,16 +131,31 @@ if FRONTEND_INDEX.exists():
 
 
 # ── CORS ───────────────────────────────────────────────────────────────────────
+# Build allowed origins list — always include localhost + any env-configured origins
+_allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+]
+for _env_var in ("VITE_APP_ORIGIN", "VERCEL_URL", "FRONTEND_URL", "NETLIFY_URL"):
+    _val = os.getenv(_env_var, "").strip()
+    if _val:
+        _allowed_origins.append(_val)
+        # Also add https:// version if http:// was provided and vice versa
+        if _val.startswith("http://"):
+            _allowed_origins.append("https://" + _val[7:])
+        elif _val.startswith("https://"):
+            _allowed_origins.append("http://" + _val[8:])
+
+logger.info("CORS allowed origins: %s", _allowed_origins)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        *([os.getenv("VITE_APP_ORIGIN")] if os.getenv("VITE_APP_ORIGIN") else []),
-        *([os.getenv("VERCEL_URL")] if os.getenv("VERCEL_URL") else []),
-    ],
+    allow_origins=_allowed_origins,
+    allow_origin_regex=r"https://.*\.netlify\.app|https://.*\.vercel\.app|https://.*\.railway\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -334,4 +349,3 @@ if __name__ == "__main__":
         reload=False,
         log_level="info",
     )
-
