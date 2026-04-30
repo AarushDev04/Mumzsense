@@ -180,7 +180,7 @@ async def synthesise(
     """
     from config import settings
 
-    # ── Uncertainty path ────────────────────────────────────────────────────
+    # ── Uncertainty path — only when zero posts retrieved ───────────────────
     if retrieval_confidence == "none" or not retrieved_posts:
         return {
             "answer_primary": UNCERTAINTY_RESPONSES.get(lang, UNCERTAINTY_RESPONSES["en"]),

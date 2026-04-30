@@ -123,14 +123,24 @@ def embed_text(text: str, lang: str) -> List[float]:
 
 
 def _confidence_level(max_score: float, num_results: int) -> str:
-    """Map similarity score to confidence label (PRD §7.2)."""
+    """Map similarity score to confidence label (PRD §7.2).
+    
+    With hash embeddings, scores are low (~0.03-0.28) but still meaningful.
+    We always return at least "low" when posts are retrieved so Groq is called.
+    "none" is reserved for zero results only.
+    """
     from config import settings
-    if num_results < 2 or max_score < settings.similarity_low:
+    if num_results == 0:
         return "none"
+    # Always attempt synthesis if we have any results
     if max_score >= settings.similarity_high:
         return "high"
     if max_score >= settings.similarity_medium:
         return "medium"
+    if max_score >= settings.similarity_low:
+        return "low"
+    # Even below similarity_low threshold — still return "low" so Groq fires.
+    # The system prompt handles quality signalling ("Generally speaking...").
     return "low"
 
 
